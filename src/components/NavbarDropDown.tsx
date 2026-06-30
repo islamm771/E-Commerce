@@ -64,8 +64,8 @@ const NavbarDropDown = ({ user }: IProps) => {
                     </div>
                     <ul className="py-1">
                         <li><Link href="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">My Account</Link></li>
-                        <li><Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</Link></li>
-                        <li><Link href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Earnings</Link></li>
+                        <li><Link href="/settings" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Settings</Link></li>
+                        <li><Link href="/earnings" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Earnings</Link></li>
                         <li><button className="w-full text-start block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                             onClick={onLogout}>Sign out</button></li>
                     </ul>

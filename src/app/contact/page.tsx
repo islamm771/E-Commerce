@@ -1,5 +1,6 @@
 import PathElement from "@/components/PathElement"
 import Button from "@/components/ui/button"
+import SectionHeader from "@/components/ui/SectionHeader"
 import { FiPhone } from "react-icons/fi"
 import { MdOutlineEmail } from "react-icons/md"
 
@@ -10,13 +11,8 @@ const page = () => {
     <div className="container mx-auto px-8 xl:px-24 pb-16">
       <PathElement indexPath="contact" />
 
-      {/* Section Header — نفس نمط المشروع */}
       <div className="mb-10">
-        <h5 className="text-sm font-semibold relative pl-6 text-red-600
-          before:content-[''] before:absolute before:-top-1 before:left-0
-          before:w-3 before:h-7 before:bg-red-600 before:rounded-sm">
-          Got Questions?
-        </h5>
+        <SectionHeader title="Got Questions?" />
         <h2 className="text-2xl font-semibold mt-4">Get In Touch With Us</h2>
       </div>
 

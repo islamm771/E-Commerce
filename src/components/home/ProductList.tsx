@@ -14,8 +14,8 @@ const ProductList = async () => {
     const result = await getProducts()
     return (
         <Wrapper title="Our Products" classes="mb-16">
-            <div className="flex justify-between items-center mt-5">
-                <h2 className="text-2xl font-semibold">Explore Our Products</h2>
+            <div className="flex justify-between items-center flex-wrap gap-4 mt-5">
+                <h2 className="text-2xl font-semibold grow">Explore Our Products</h2>
                 <Link href="/products" className="bg-red-500 text-white text-sm px-4 py-3.5 rounded-sm font-medium capitalize">
                     View All Products
                 </Link>

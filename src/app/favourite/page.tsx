@@ -5,6 +5,7 @@ import PathElement from "@/components/PathElement"
 import ProductCard from "@/components/ProductCard"
 import FavouriteSkeleton from "@/components/Skeletons/FavouriteSkeleton"
 import Button from "@/components/ui/button"
+import SectionHeader from "@/components/ui/SectionHeader"
 import { useFav } from "@/hooks/useFavourite"
 import Link from "next/link"
 import { FaRegHeart } from "react-icons/fa"
@@ -32,11 +33,7 @@ const FavouritePage = () => {
 
       {/* Section header */}
       <div className="mb-8">
-        <h5 className="text-sm font-semibold relative pl-6 text-red-600
-          before:content-[''] before:absolute before:-top-1 before:left-0
-          before:w-3 before:h-7 before:bg-red-600 before:rounded-sm">
-          Wishlist
-        </h5>
+        <SectionHeader title="Wishlist" />
         <div className="flex items-end justify-between mt-4">
           <h2 className="text-2xl font-semibold">
             My Favourites
@@ -46,7 +43,7 @@ const FavouritePage = () => {
       </div>
 
       {products.length > 0 ? (
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6">
           {products.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}

@@ -5,6 +5,7 @@ import { IProduct } from "@/interface";
 import NotFoundItems from "../NotFoundItems";
 import PathElement from "../PathElement";
 import ProductCard from "../ProductCard";
+import SectionHeader from "../ui/SectionHeader";
 import FilterAside from "./FilterAside";
 import MobileFilter from "./MobileFilter";
 
@@ -47,9 +48,7 @@ const ProductsContainer = ({ products, category }: Props) => {
         <div className="col-span-12 xl:col-span-9">
           <div className="header flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div className="grow">
-              <h5 className="text-sm font-semibold relative pl-6 text-red-600 capitalize mb-5 before:content-[''] before:absolute before:-top-1 before:left-0 before:w-3 before:h-7 before:bg-red-600 before:rounded-sm">
-                our products
-              </h5>
+              <SectionHeader title="Our Products" />
 
               <h2 className="text-3xl md:text-4xl font-semibold">
                 Browse All Products

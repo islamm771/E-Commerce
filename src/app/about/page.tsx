@@ -2,6 +2,7 @@ import FeatureCard from "@/components/about/FeatureCard"
 import StatCard from "@/components/about/StatCard"
 import TeamMember from "@/components/about/TeamMember"
 import PathElement from "@/components/PathElement"
+import SectionHeader from "@/components/ui/SectionHeader"
 import Image from "next/image"
 import { FaDollarSign, FaMoneyBillWave, FaShieldAlt, FaShoppingBag, FaStore } from "react-icons/fa"
 import { FaTruckFast } from "react-icons/fa6"
@@ -26,11 +27,7 @@ const page = () => {
       {/* Our Story */}
       <section className="grid lg:grid-cols-2 gap-16 items-center py-16">
         <div>
-          <h5 className="text-sm font-semibold relative pl-6 text-red-600 mb-6
-            before:content-[''] before:absolute before:-top-1 before:left-0
-            before:w-3 before:h-7 before:bg-red-600 before:rounded-sm">
-            Our Story
-          </h5>
+          <SectionHeader title="Our Story" />
           <h1 className="text-4xl font-semibold mb-6">
             Building the Future of Shopping
           </h1>
@@ -69,11 +66,7 @@ const page = () => {
 
       {/* Team */}
       <section className="py-16">
-        <h5 className="text-sm font-semibold relative pl-6 text-red-600 mb-4
-          before:content-[''] before:absolute before:-top-1 before:left-0
-          before:w-3 before:h-7 before:bg-red-600 before:rounded-sm">
-          Our Team
-        </h5>
+        <SectionHeader title="Our Team" />
         <h2 className="text-2xl font-semibold mb-10">Meet The People Behind It</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -85,11 +78,7 @@ const page = () => {
 
       {/* Features */}
       <section className="py-16">
-        <h5 className="text-sm font-semibold relative pl-6 text-red-600 mb-4
-          before:content-[''] before:absolute before:-top-1 before:left-0
-          before:w-3 before:h-7 before:bg-red-600 before:rounded-sm">
-          Why Choose Us
-        </h5>
+        <SectionHeader title="Why Choose Us" />
         <h2 className="text-2xl font-semibold mb-10">Our Services</h2>
 
         <div className="grid md:grid-cols-3 gap-8">
