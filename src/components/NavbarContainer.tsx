@@ -1,14 +1,10 @@
 "use client";
 
+import { useCart } from "@/hooks/useCart";
 import { ILoggedUser } from "@/interface";
-import { getCart } from "@/services/cart";
-import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useState } from "react";
-import toast from "react-hot-toast";
 import { FaBars, FaTimes } from "react-icons/fa";
-import ErrorHandler from "./ErrorHandler";
 import MobileNav from "./MobileNav";
 import NavLinks from "./NavLinks";
 import NavRightSection from "./NavRightSide";
@@ -19,29 +15,9 @@ interface IProps {
 
 const NavbarContainer = ({ userData }: IProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const router = useRouter();
 
-  const handleSearch = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
+  const { cart } = useCart();
 
-    if (!searchQuery.trim()) {
-      toast.error("Please enter a search query");
-      return;
-    }
-
-    router.push(`/products/search?q=${searchQuery}`);
-  };
-
-  const { data, error } = useQuery({
-    queryKey: ["cart"],
-    queryFn: getCart,
-    enabled: !!userData,
-  });
-
-  if (error) return <ErrorHandler />;
-
-  const cart = data?.data.cart;
 
   return (
     <div className="container mx-auto px-6 xl:px-24">
@@ -66,9 +42,6 @@ const NavbarContainer = ({ userData }: IProps) => {
         <div className="hidden lg:flex items-center gap-20">
           <NavLinks userData={userData} />
           <NavRightSection
-            searchQuery={searchQuery}
-            setSearchQuery={setSearchQuery}
-            handleSearch={handleSearch}
             userData={userData}
             cartCount={cart?.length || 0}
           />
@@ -78,9 +51,6 @@ const NavbarContainer = ({ userData }: IProps) => {
       {/* Mobile menu */}
       <MobileNav
         isMenuOpen={isMenuOpen}
-        searchQuery={searchQuery}
-        setSearchQuery={setSearchQuery}
-        handleSearch={handleSearch}
         userData={userData}
         cartCount={cart?.length || 0}
       />

@@ -1,12 +1,9 @@
 export const fetcher = async <T>(path: string): Promise<T> => {
   const url = `${process.env.NEXT_PUBLIC_LOCALHOST}${path}`;
   try {
-    const res = await fetch(
-      url,
-      {
-        cache: "no-store",
-      }
-    );
+    const res = await fetch(url, {
+      next: { revalidate: 60 }
+    });
 
     const data = await res.json()
 

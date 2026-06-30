@@ -9,10 +9,12 @@ import FilterAside from "./FilterAside";
 
 interface FilterAsideProps {
   categories: string[];
+  brands: string[];
   ratings: number[];
   price: number;
   setPrice: (value: number) => void;
   toggleCategory: (category: ICategory) => void;
+  toggleBrand: (brand: ICategory) => void;
   toggleRating: (rating: number) => void;
   setOpen?: (val: boolean) => void;
 }
@@ -20,10 +22,12 @@ interface FilterAsideProps {
 
 const MobileFilter = ({
   categories,
+  brands,
   ratings,
   price,
   setPrice,
   toggleCategory,
+  toggleBrand,
   toggleRating,
   setOpen
 }: FilterAsideProps) => {
@@ -52,7 +56,10 @@ const MobileFilter = ({
           setPrice={setPrice}
           toggleCategory={toggleCategory}
           toggleRating={toggleRating}
-          setOpen={setOpen} />
+          setOpen={setOpen}
+          brands={brands}
+          toggleBrand={toggleBrand}
+        />
       </div>
     </>
   );

@@ -58,10 +58,12 @@ const ProductsContainer = ({ products, category }: Props) => {
 
             <MobileFilter
               categories={categories}
+              brands={brands}
               ratings={ratings}
               price={price}
               setPrice={setPrice}
               toggleCategory={toggleCategory}
+              toggleBrand={toggleBrand}
               toggleRating={toggleRating}
             />
           </div>
